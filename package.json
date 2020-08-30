@@ -1,0 +1,31 @@
+{
+  "name": "spacex-dashboard",
+  "version": "1.0.0",
+  "description": "\"A Dashboard for SpaceX stats\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "\"echo \\\"Error: no test specified\\\" && exit 1\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Trinitui/SpaceX-Dashboard.git"
+  },
+  "keywords": [
+    "spacex"
+  ],
+  "author": "Andrew Whelan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Trinitui/SpaceX-Dashboard/issues"
+  },
+  "homepage": "https://github.com/Trinitui/SpaceX-Dashboard#readme",
+  "dependencies": {
+    "axios": "^0.20.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "handlebars": "^4.7.6",
+    "jquery": "^3.5.1",
+    "semantic-ui-css": "^2.4.1",
+    "vanilla-router": "^1.2.8"
+  }
+}
