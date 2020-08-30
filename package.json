@@ -2,7 +2,7 @@
   "name": "spacex-dashboard",
   "version": "1.0.0",
   "description": "\"A Dashboard for SpaceX stats\"",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "\"echo \\\"Error: no test specified\\\" && exit 1\""
   },
