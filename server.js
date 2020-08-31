@@ -1,8 +1,16 @@
-require(`dotenv`).config(); //reading the dotenv file (mostly for keys and stuff)
-const express = require(`express`);
+require('dotenv').config(); // read .env files
+const express = require('express');
 
 const app = express();
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 2999;
 
-//Setting public folder as root folder
-app.use(express.static(`public`));
+// Set public folder as root
+app.use(express.static('public'));
+
+// Allow front-end access to node_modules folder
+app.use('/scripts', express.static(`${__dirname}/node_modules/`));
+
+// Listen for HTTP requests on port 3000
+app.listen(port, () => {
+  console.log('listening on %d', port);
+});
