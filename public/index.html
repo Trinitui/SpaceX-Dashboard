@@ -25,7 +25,34 @@
                     About
                 </a>
             </div>
-            
+            <!-- Error Template -->
+            <script id="error-template" type="text/x-handlebars-template">
+                <div class="ui {{color}} inverted segment" style="height:250px;">
+                    <br>
+                    <h2 class="ui center aligned icon header">
+                        <i class="exclamation triangle icon"></i>
+                        <div class="content">
+                            {{title}}
+                            <div class="sub header">{{message}}</div>
+                        </div>
+                    </h2>
+                </div>
+            </script>
+            <!-- Last Launch -->
+            <script id="last-launch-template" type="text/x-handlebars-template">
+                <h1 class="ui header">Last Launch</h1>
+                <hr>
+            </script>
+            <!-- Upcoming Launch -->
+            <script id="upcoming-launch-template" type="text/x-handlebars-template">
+                <h1 class="ui header">Upcoming Launch</h1>
+                <hr>
+            </script>
+            <!-- About -->
+            <script id="about-template" type="text/x-handlebars-template">
+                <h1 class="ui header">About</h1>
+                <hr>
+            </script>
             <!-- Application Root-->
             <div id='app'></div>
         </div>
