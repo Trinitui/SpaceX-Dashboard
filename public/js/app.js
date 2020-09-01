@@ -7,6 +7,6 @@ window.addEventListener('load', () => {
     const upcomingTemplate = Handlebars.compile($('#upcoming-launch-template').html());
     const dashboardTemplate = Handlebars.compile($('#dashboard-template').html())
 
-    const html = lastTemplate();
+    const html = dashboardemplate();
     el.html(html);
 });
