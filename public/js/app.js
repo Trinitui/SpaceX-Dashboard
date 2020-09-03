@@ -41,7 +41,7 @@ window.addEventListener('load', () => {
 
     });
 
-    // Navigate app to current URL
+    // Navigate app to current url
     router.navigateTo(window.location.pathname);
 
     // Highlight Active Menu on Refresh/Page Reload
@@ -49,19 +49,19 @@ window.addEventListener('load', () => {
     link.addClass('active');
 
     $('a').on('click', (event) => {
-        //block browser page load
+        // Block browser page load
         event.preventDefault();
 
-        //Highlight active menu on click
+        // Highlight Active Menu on Click
         const target = $(event.target);
         $('.item').removeClass('active');
         target.addClass('active');
 
-        //Navigate to a clicked URL
+        // Navigate to clicked url
         const href = target.attr('href');
         const path = href.substr(href.lastIndexOf('/'));
         router.navigateTo(path);
-    });
+        });
 
 
 
