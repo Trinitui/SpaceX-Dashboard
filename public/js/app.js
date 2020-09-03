@@ -1,4 +1,4 @@
-const { Router } = require("express");
+//const {Router} = require("express");
 
 window.addEventListener('load', () => {
     const el = $('#app');
@@ -16,9 +16,9 @@ window.addEventListener('load', () => {
         mode: 'history',
         page404: (path) => {
             const html = errorTemplate({
-                color: 'white',
+                color: 'black',
                 title: 'Error 404 - Page NOT Found!',
-                message: `The patch '/${path}' does not exist on this site`,
+                message: `The path '/${path}' does not exist on this site`,
             });
             el.html(html);
         },
@@ -27,7 +27,7 @@ window.addEventListener('load', () => {
         // This whole section, these three template declarations, tell the site what to do when each of these paths are hit
     router.add('/',() => {
         let html = dashboardTemplate();
-        el = html(html);
+        el.html(html);
     });
 
     router.add('/latest-launch', () => {
