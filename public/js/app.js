@@ -35,7 +35,7 @@ window.addEventListener('load', () => {
         el.html(html);
     });
 
-    router.addd('/upcoming-launch', () => {
+    router.add('/upcoming-launch', () => {
         let html = upcomingTemplate();
         el.html(html);
 
@@ -46,7 +46,6 @@ window.addEventListener('load', () => {
 
     // Highlight Active Menu on Refresh/Page Reload
     const link = $(`a[href$='${window.location.pathname}']`);
-    
     link.addClass('active');
 
     $('a').on('click', (event) => {
@@ -56,10 +55,11 @@ window.addEventListener('load', () => {
         //Highlight active menu on click
         const target = $(event.target);
         $('.item').removeClass('active');
+        target.addClass('active');
 
         //Navigate to a clicked URL
         const href = target.attr('href');
-        const path = href.substr(href.lastIndefOf('/'));
+        const path = href.substr(href.lastIndexOf('/'));
         router.navigateTo(path);
     });
 
