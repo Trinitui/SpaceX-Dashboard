@@ -38,7 +38,32 @@ window.addEventListener('load', () => {
     router.addd('/upcoming-launch', () => {
         let html = upcomingTemplate();
         el.html(html);
+
     });
+
+    // Navigate app to current URL
+    router.navigateTo(window.location.pathname);
+
+    // Highlight Active Menu on Refresh/Page Reload
+    const link = $(`a[href$='${window.location.pathname}']`);
+    
+    link.addClass('active');
+
+    $('a').on('click', (event) => {
+        //block browser page load
+        event.preventDefault();
+
+        //Highlight active menu on click
+        const target = $(event.target);
+        $('.item').removeClass('active');
+
+        //Navigate to a clicked URL
+        const href = target.attr('href');
+        const path = href.substr(href.lastIndefOf('/'));
+        router.navigateTo(path);
+    });
+
+
 
 
 
