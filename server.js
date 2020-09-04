@@ -1,5 +1,5 @@
 require('dotenv').config(); // read .env files
-const { getLatestData } = require('./lib/spacex-service')
+const {getLatestData} = require('./lib/spacex-service')
 const express = require('express');
 
 const app = express();
@@ -20,9 +20,13 @@ app.listen(port, () => {
   console.log("Online. Press control+c to take offline")
 });
 
-// place at bottom of file
+
+
+console.log("inline testing of fn: " + getLatestData());
+
+// place at bottom of file  -  This is working!!!
 const test = async() => {
   const data = await getLatestData();
-  console.log(data);
+  console.log("Data Testing: ", data.data);
 }
 test();
