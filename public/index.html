@@ -42,6 +42,27 @@
             <script id="dash-template" type="text/x-handlebars-template">
                 <h1 class="ui header">SpaceX Dashboard</h1>
                 <hr>
+                <div class="ui loading basic segment"></div>
+                    <table class="ui celled striped selectable inverted table">
+                        <thead>
+                            <tr>
+                                <th>Flight Number</th>
+                                <th>Launch Success</th>
+                            </tr>
+                        </thead>
+                     
+                            <tbody>
+                            
+                            <tr>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            
+                        </tbody>
+                    
+                    </table>
+                
+                </div>
             </script>
             <!-- Latest Launch -->
             <script id="latest-launch-template" type="text/x-handlebars-template">
@@ -56,7 +77,6 @@
             <!-- Application Root-->
             <div id='app'></div>
         </div>
-    <!-- JS Library Dependencies -->
             <script src="scripts/jquery/dist/jquery.min.js"></script>
             <script src="scripts/semantic-ui-css/semantic.min.js"></script>
             <script src="scripts/axios/dist/axios.min.js"></script>

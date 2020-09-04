@@ -25,17 +25,51 @@ window.addEventListener('load', () => {
     });
 
         // This whole section, these three template declarations, tell the site what to do when each of these paths are hit
-    router.add('/',() => {
-        let html = dashboardTemplate();
-        el.html(html);
-    });
+    //router.add('/',() => {
+    //    let html = dashboardTemplate();
+    //    el.html(html);
+    //});
+    // Instantiate api handler  
+  
+  // Display Error Banner
+  const showError = (error) => {
+    const { title, message } = error.response.data;
+    const html = errorTemplate({ color: 'red', title, message });
+    el.html(html);
+  };
+  
+  // Display SpaceX Flight Number and Success
+  router.add('/', async() => {
+    console.log("hit router add /")
+    // Display loader first
+    let html = dashboardTemplate();
+    el.html(html);
+    console.log("should have displayed header and hr")
+    try {
+      // Load Launch, Success data ---
+      console.log("about to pull spacex data into object")
+      const response = await axios.get("https://api.spacexdata.com/v3/launches/");
+      const { flight_number, launch_success } = response.data[0];
+      console.log({ flight_number, launch_success });
+      // Display Launch, Success Table
+      html = dashboardTemplate({ flight_number, launch_success });
+      el.html(html);
+    } catch (error) {
+      showError(error);
+    } finally {
+      // Remove loader status
+      $('.loading').removeClass('loading');
+    }
+  });
 
     router.add('/latest-launch', () => {
+        console.log("Hit latest launch")
         let html = lastTemplate();
         el.html(html);
     });
 
     router.add('/upcoming-launch', () => {
+        console.log("Hit upcoming launch")
         let html = upcomingTemplate();
         el.html(html);
 
